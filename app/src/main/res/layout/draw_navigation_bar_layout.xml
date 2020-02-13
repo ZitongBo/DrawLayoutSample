@@ -39,8 +39,10 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <View android:layout_width="match_parent" android:layout_height="1px"
-              android:background="#11161d"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#11161d" />
 
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="0dp"

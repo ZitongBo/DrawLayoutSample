@@ -15,4 +15,5 @@ public class App extends Application {
         super.onCreate();
         BaseUtils.initialize(this);
     }
+
 }

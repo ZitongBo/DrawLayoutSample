@@ -1,5 +1,6 @@
 package com.lee.drawlayoutsample;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
@@ -103,7 +104,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private float mStartY;
     private static final int STROKE_WIDTH = 5;
 
-
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +118,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         getWindowManager().getDefaultDisplay().getMetrics(mDisplayMetrics);
         mStatusBarHeight = getStatusBarHeight(this);
         mRootView = (FrameLayout) findViewById(R.id.root);
+
         mContent = (FrameLayout) findViewById(R.id.content);
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
@@ -126,6 +128,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mContentLayoutParams.height = mDisplayMetrics.heightPixels - mStatusBarHeight - 107;
 
         mContent.setOnTouchListener(new View.OnTouchListener() {
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 mScaleGestureDetector.onTouchEvent(event);

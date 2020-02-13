@@ -180,4 +180,21 @@
               android:layout_below="@+id/linearlayout"
               android:background="#11161d"/>
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:text="@string/commit" />
+
+    <Button
+        android:id="@+id/redo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:text="@string/redo" />
+
 </FrameLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DrawLayoutSample</string>
+    <string name="commit">提交</string>
+    <string name="redo">重做</string>
 </resources>
