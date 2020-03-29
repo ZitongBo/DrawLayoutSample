@@ -258,6 +258,7 @@
                       android:layout_height="0dp"
                       android:layout_weight="1"
                       android:orientation="horizontal">
+
             <RelativeLayout
                 android:id="@+id/xuxian"
                 android:layout_width="0dp"
@@ -285,6 +286,8 @@
                            android:scaleType="fitXY"/>
             </RelativeLayout>
         </LinearLayout>
+
     </LinearLayout>
+
 </ScrollView>
 

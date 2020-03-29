@@ -1,200 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="#ffffff">
+
+
+
     <FrameLayout
         android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="334dp"
+        android:layout_gravity="bottom|end"
         android:layout_marginLeft="312px"
-        android:layout_marginTop="107px"
-        android:background="@drawable/wangge"
-    />
+        android:layout_marginTop="80dp"
+        android:background="@drawable/wangge">
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top|end"
+        android:layout_marginLeft="312px"
+        android:background="#fffeee"
+        android:orientation="vertical">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="71dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/ic_launcher" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:background="@drawable/ic_smile_red" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_hot_green" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <include android:id="@+id/draw_navigation_bar" layout="@layout/draw_navigation_bar_layout"/>
     <!--<com.dongwen.cn.electricity.view.DrawCanvasView-->
     <!--android:id="@+id/canvas_view" android:layout_width="match_parent"-->
     <!--android:layout_height="match_parent">-->
     <!--</com.dongwen.cn.electricity.view.DrawCanvasView>-->
-    <RelativeLayout android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|right"
-                    android:layout_marginLeft="312px"
-                    android:background="#ffffff"
-                    android:orientation="vertical">
-        <LinearLayout android:id="@+id/linearlayout"
-                      android:layout_width="wrap_content"
-                      android:layout_height="106px"
-                      android:layout_alignParentRight="true"
-                      android:layout_alignParentTop="true"
-                      android:layout_marginRight="30dp"
-                      android:orientation="horizontal">
 
-            <TextView android:layout_width="wrap_content"
-                      android:layout_height="match_parent"
-                      android:layout_gravity="center_vertical"
-                      android:gravity="center_vertical"
-                      android:text="元素颜色："/>
 
-            <RadioGroup
-                android:id="@+id/radiogroup"
-                android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:layout_gravity="top|end"
+        android:layout_marginLeft="312px"
+        android:layout_marginTop="50dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="106px"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
+                android:background="#000" />
+
+
+            <ImageView
+                android:id="@+id/text"
+                android:layout_width="50px"
+                android:layout_height="50px"
                 android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="5dp">
+                android:layout_marginLeft="40px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/text_normal" />
 
-                <RadioButton
-                    android:id="@+id/rb_black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:checked="true"
-                    android:gravity="center_vertical"
-                    android:text="黑色"
-                />
-                <RadioButton
-                    android:id="@+id/rb_green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20px"
-                    android:gravity="center_vertical"
-                    android:text="绿色"
-                />
-                <RadioButton
-                    android:id="@+id/rb_red"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20px"
-                    android:gravity="center_vertical"
-                    android:text="红色"
-                />
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/back" />
 
-            </RadioGroup>
+            <ImageView
+                android:id="@+id/forward"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/forward" />
 
-            <View android:layout_width="1dp" android:layout_height="match_parent"
-                  android:background="#000"/>
+            <ImageView
+                android:id="@+id/clear"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/gallery_toolbar_chinabrush_press"
+                android:visibility="gone" />
 
+            <ImageView
+                android:id="@+id/rotate"
+                android:layout_width="50px"
+                android:layout_height="23dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="9dp"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_menu_rotate_light_n" />
 
-            <ImageView android:id="@+id/text"
-                       android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="40px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/text_normal"/>
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/actionbar_ic_delete" />
 
-            <ImageView android:id="@+id/back"
-                       android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="40px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/back"/>
+            <ImageView
+                android:id="@+id/copy"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/actionbar_ic_copy" />
 
-            <ImageView android:id="@+id/forward"
-                       android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="40px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/forward"/>
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/actionbar_ic_cancel" />
 
-            <ImageView android:id="@+id/clear"
-                       android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg" android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/gallery_toolbar_chinabrush_press"
-                       android:visibility="gone"/>
-
-            <ImageView android:id="@+id/rotate" android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY" android:src="@drawable/ic_menu_rotate_light_n"
-            />
-
-            <ImageView android:id="@+id/delete" android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY" android:src="@drawable/actionbar_ic_delete"
-            />
-            <ImageView android:id="@+id/copy"
-                       android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/actionbar_ic_copy"
-            />
-            <ImageView android:id="@+id/cancel" android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/actionbar_ic_cancel"
-            />
-            <ImageView android:id="@+id/done" android:layout_width="50px"
-                       android:layout_height="50px"
-                       android:layout_gravity="center_vertical"
-                       android:layout_marginLeft="20px"
-                       android:background="@drawable/draw_selector_bg"
-                       android:clickable="true"
-                       android:focusable="true"
-                       android:scaleType="fitXY"
-                       android:src="@drawable/actionbar_ic_done"
-            />
+            <ImageView
+                android:id="@+id/done"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:background="@drawable/draw_selector_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/actionbar_ic_done" />
         </LinearLayout>
-        <View android:layout_width="match_parent"
-              android:layout_height="1px"
-              android:layout_below="@+id/linearlayout"
-              android:background="#11161d"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/linearlayout"
+            android:background="#11161d" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_horizontal"
+            android:gravity="start"
+            android:text="组件" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <RadioButton
+                android:id="@+id/rb_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="true"
+                android:gravity="center_vertical"
+                android:text="黑色" />
+
+            <RadioButton
+                android:id="@+id/rb_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:gravity="center_vertical"
+                android:text="绿色" />
+
+        </RadioGroup>
+
+        <RadioButton
+            android:id="@+id/rb_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20px"
+            android:gravity="center_vertical"
+            android:text="红色" />
+
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/commit"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="236dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="300dp"
-        android:text="@string/commit" />
+        android:layout_gravity="bottom|end"
+        android:orientation="horizontal"
+        android:visibility="visible">
 
-    <Button
-        android:id="@+id/redo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="350dp"
-        android:text="@string/redo" />
+        <Button
+            android:id="@+id/commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/commit"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/redo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/redo" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/recentralization"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left|bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/iscas" />
 
 </FrameLayout>

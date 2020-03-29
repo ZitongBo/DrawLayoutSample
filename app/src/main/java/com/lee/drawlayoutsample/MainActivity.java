@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -48,8 +49,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ScaleGestureDetector mScaleGestureDetector;
     private ScaleGestureListener mScaleGestureListener = new ScaleGestureListener();
 
-    private Set<View> mViewList = new HashSet<View>();
-    private Set<View> mFocusViewList = new HashSet<View>();
+    private Set<View> mViewList = new HashSet<>();
+    private Set<View> mFocusViewList = new HashSet<>();
     private long downTime = 0;
     private float downX = 0f;
     private float downY = 0f;
@@ -75,22 +76,24 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private Bitmap mLineBitmapRed;
 
 
-    private List<ViewInfo> mInfoList = new ArrayList<ViewInfo>();
+    private List<ViewInfo> mInfoList = new ArrayList<>();
     private FrameLayout mContent;
     private List<View> mRectList;
+    private Button mRedo;
+    private Button mCommit;
     private float mCurrentScale = 1f;
     private float mContentDownX = 0f;
     private float mContentDownY = 0f;
     private boolean mMoved = false;
     private boolean mSelectTextTools;
     private ImageView mTextTools;
-    private List<Integer> mLefts = new ArrayList<Integer>();
-    private List<Integer> mTops = new ArrayList<Integer>();
-    private List<Integer> mRights = new ArrayList<Integer>();
-    private List<Integer> mBottoms = new ArrayList<Integer>();
-    private List<View> mLines = new ArrayList<View>();
+    private List<Integer> mLefts = new ArrayList<>();
+    private List<Integer> mTops = new ArrayList<>();
+    private List<Integer> mRights = new ArrayList<>();
+    private List<Integer> mBottoms = new ArrayList<>();
+    private List<View> mLines = new ArrayList<>();
     private static final int LIMIT = 50;
-    private static final int OFFSET = 100;
+    private static final int OFFSET = 50;
     private static final int PADDING = 20;
 
     private int mCurrentColor; // 0--黑色，1--绿色，2--红色
@@ -117,16 +120,38 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mDisplayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(mDisplayMetrics);
         mStatusBarHeight = getStatusBarHeight(this);
-        mRootView = (FrameLayout) findViewById(R.id.root);
+        mRootView =  findViewById(R.id.root);
 
-        mContent = (FrameLayout) findViewById(R.id.content);
+        mContent = findViewById(R.id.content);
+        mRedo = findViewById(R.id.redo);
+        mCommit = findViewById(R.id.commit);
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        RadioGroup radioGroup = findViewById(R.id.radiogroup);
         radioGroup.setOnCheckedChangeListener(this);
         mContentLayoutParams = (FrameLayout.LayoutParams) mContent.getLayoutParams();
         mContentLayoutParams.width = mDisplayMetrics.widthPixels - 312;
         mContentLayoutParams.height = mDisplayMetrics.heightPixels - mStatusBarHeight - 107;
-
+        mRedo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (View view : mViewList) {
+                    mContent.removeView(view);
+                }
+                mViewList.clear();
+                mContent.requestLayout();
+            }
+        });
+        mCommit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (View view : mViewList) {
+                    mContent.removeView(view);
+                }
+                mViewList.clear();
+                mContent.requestLayout();
+                //TODO:生成结果
+            }
+        });
         mContent.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
@@ -454,6 +479,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
                 }
                 break;
+
             case R.id.clear:
                 for (View view : mViewList) {
                     mContent.removeView(view);
